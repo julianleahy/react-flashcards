@@ -65,7 +65,9 @@ class App extends Component {
     // wait for all data before displaying card
     let card = 'Loading ...';
     if(this.state.loaded) {
-      card = <Card />
+      card = <Card 
+                question={this.state.curQuest.question}
+                answer={this.state.curQuest.answer} />
     }
     return (
       <div className="App">
