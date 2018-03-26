@@ -1,8 +1,17 @@
 import React from 'react';
-import './Card.css'
+import './Card.css';
 
 const Card = (props) => (
-    <div>{props.question}{props.answer}</div>
+    <div className="card-container">
+        <div className="card">
+            <div className="front">
+                <div className="question">{props.question}</div>
+            </div>
+            <div className="front back">
+                <div className="answer">{props.answer}</div>
+            </div>
+        </div>
+    </div>
 )
 
-export default Card;
+export default Card
