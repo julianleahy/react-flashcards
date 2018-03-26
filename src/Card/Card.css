@@ -1,7 +1,7 @@
 .card-container {
   cursor: pointer;
   height: 400px;
-  width: 400px;
+  width: 600px;
   perspective: 800px;
   position: relative;
   margin: 50px auto;
@@ -11,7 +11,7 @@
 
 .card {
   height: 400px;
-  width: 400px;
+  width: 600px;
   position: absolute;
   border: 1px solid #300;
   transform-style: preserve-3d;
@@ -25,7 +25,7 @@
 
 .card .front {
   height: 400px;
-  width: 400px;
+  width: 600px;
   backface-visibility: hidden;
   position: absolute;
   overflow: hidden;
@@ -35,9 +35,10 @@
 
 .card .back {
   height: 400px;
-  width: 400px;
+  width: 600px;
   text-align: left;
   transform: rotateY(180deg);
+  overflow: scroll;
 }
 
 .question, .answer{
