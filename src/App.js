@@ -69,7 +69,10 @@ class App extends Component {
 
   render() {
     // wait for all data before displaying card
-    let card = 'Loading ...',
+    let card = (
+      <div className='card-container'>
+        <div className='loading'>Flashcards</div>
+      </div>),
         btn = null;
 
     if(this.state.loaded) {
