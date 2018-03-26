@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 import "firebase/database";
 import { DB_CONFIG } from "./Config/Firebase/db_config";
 import Card from "./Card/Card";
+import NewCard from './NewCard/NewCard';
 
 class App extends Component {
 
@@ -63,15 +64,19 @@ class App extends Component {
 
   render() {
     // wait for all data before displaying card
-    let card = 'Loading ...';
+    let card = 'Loading ...',
+        btn = null;
+
     if(this.state.loaded) {
       card = <Card 
                 question={this.state.curQuest.question}
                 answer={this.state.curQuest.answer} />
+      btn = <NewCard />
     }
     return (
       <div className="App">
         {card}
+        {btn}
       </div>
     );
   }
