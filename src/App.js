@@ -14,7 +14,8 @@ class App extends Component {
   state = {
     cards: [],
     qNum: null,
-    loaded : false
+    loaded : false,
+    curQuest : {}
   }
 
   componentWillMount() {
@@ -32,8 +33,31 @@ class App extends Component {
         // update loaded only when all questions are loaded
         if(currentCards.length === this.state.qNum){
           this.setState({loaded : true, cards: currentCards})
+          this.filterCards();
         }
       })
+    })
+  }
+
+  filterCards = () => {
+    // filter and return unasked questions only
+    const unAsked = [
+      ...this.state.cards.filter(c => c.asked === false )
+    ]
+
+    this.selectRandomCard(unAsked);
+  }
+
+  selectRandomCard = (collection) => {
+    let idx = Math.floor(Math.random() * collection.length);
+    const curQuest = collection[idx];
+
+    // set curQuest asked property to true
+    curQuest.asked = true;
+
+    this.setState({
+      cards : collection,
+      curQuest : curQuest
     })
   }
 
