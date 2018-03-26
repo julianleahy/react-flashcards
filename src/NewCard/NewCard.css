@@ -1,0 +1,11 @@
+.nextCard {
+  background-color: cadetblue;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  transition: all .3s ease;
+}
+
+.nextCard:hover {
+  background-color: chocolate;
+}
