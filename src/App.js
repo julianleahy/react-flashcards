@@ -78,8 +78,13 @@ class App extends Component {
     if(this.state.loaded) {
       card = <Card 
                 question={this.state.curQuest.question}
-                answer={this.state.curQuest.answer} />
-      btn = <NewCard next={this.filterCards} done={this.state.finished} />
+                answer={this.state.curQuest.answer} 
+                />
+      btn = <NewCard 
+                next={this.filterCards} 
+                done={this.state.finished} 
+                qNum={(this.state.qNum - this.state.cards.length)+1} 
+                nQues={this.state.qNum}/>
     }
     return (
       <div className="App">
