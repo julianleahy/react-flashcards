@@ -4,7 +4,8 @@
 
 .loading {
     height: 400px;
-    width: 400px;
+    width: 100%;
+    max-width: 600px;
     position: absolute;
     border: 1px solid #300; 
     background: url('./static/flasher.jpg') center no-repeat #fff;
