@@ -71,7 +71,7 @@ class App extends Component {
       card = <Card 
                 question={this.state.curQuest.question}
                 answer={this.state.curQuest.answer} />
-      btn = <NewCard />
+      btn = <NewCard next={this.filterCards} />
     }
     return (
       <div className="App">
