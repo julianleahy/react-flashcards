@@ -16,7 +16,8 @@ class App extends Component {
     cards: [],
     qNum: null,
     loaded : false,
-    curQuest : {}
+    curQuest : {},
+    finished : false
   }
 
   componentWillMount() {
@@ -56,6 +57,10 @@ class App extends Component {
     // set curQuest asked property to true
     curQuest.asked = true;
 
+    if(this.state.cards.length === 2){
+      this.setState({finished : true})
+    }
+
     this.setState({
       cards : collection,
       curQuest : curQuest
@@ -71,7 +76,7 @@ class App extends Component {
       card = <Card 
                 question={this.state.curQuest.question}
                 answer={this.state.curQuest.answer} />
-      btn = <NewCard next={this.filterCards} />
+      btn = <NewCard next={this.filterCards} done={this.state.finished} />
     }
     return (
       <div className="App">
